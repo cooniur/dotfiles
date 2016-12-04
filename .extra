@@ -1,0 +1,43 @@
+##
+# Add homebrew to PATH
+##
+export PATH=$PATH:/usr/local/sbin
+
+##
+# Unset DYLD_LIBRARY_PATH for homebrew
+##
+unset DYLD_LIBRARY_PATH
+
+##
+# Set JAVA_HOME
+##
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+##
+# Command aliases
+##
+alias ls='ls -G'
+alias l='ls -Fl'
+alias ll='ls -Fl'
+alias la='ll -f'
+alias grep='grep --color'
+alias e="$HOME/Applications/dev/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+
+##
+# THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+##
+# [[ -s "/Users/$USER/.gvm/bin/gvm-init.sh" ]] && source "/Users/$USER/.gvm/bin/gvm-init.sh"
+echo "GVM has been disabled since 4/17/2016"
+
+##
+# Make sublime default text editor
+##
+duti ~/.duti
+
+##
+# Open file using Visual Studio Code from Terminal
+# http://kevgriffin.com/how-to-run-visual-studio-code-from-terminal-on-mac-osx/
+##
+vs() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}  
